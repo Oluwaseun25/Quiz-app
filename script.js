@@ -101,8 +101,8 @@ function showQuestion(){
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
-        answer-button.appendChild(button)
-    })
+        answerBtn.appendChild(button);
+    });
 }
 
 startQuiz();
