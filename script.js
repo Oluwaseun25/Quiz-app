@@ -74,3 +74,20 @@ const questions = [
 
 ]
 
+// nb-56+%=
+
+const questionElement = document.getElementById("question");
+const answerBtn = document.getElementById("answer-button");
+const nextButton = document.querySelector("#next-btn");
+
+
+let currentQuestionIndex = 0;
+let scores = 0;
+
+function startQuiz(){
+    let currentQuestionIndex = 0;
+    let scores = 0;
+    nextButton.innerHTML = "next"
+    showQuestion()
+}
+
