@@ -85,6 +85,7 @@ let currentQuestionIndex = 0;
 let scores = 0;
 
 function startQuiz(){
+    resetQuiz();
     let currentQuestionIndex = 0;
     let scores = 0;
     nextButton.innerHTML = "next"
@@ -102,7 +103,23 @@ function showQuestion(){
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerBtn.appendChild(button);
+        answer.correct? button.dataset.correct = answer.correct
+        button.addEventListener("click",(selectAnswer)=>{
+        
+        })
     });
 }
+
+function resetQuiz() {
+    nextButton.style.display = "none" 
+    while(answerBtn.firstChild){
+        answerBtn.removeChild(answerBtn.firstChild);
+    }
+}
+
+function selectAnswer(e) {
+     selectedBtn = e.target 
+}
+
 
 startQuiz();

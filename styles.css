@@ -12,7 +12,7 @@ body{
 
 .app{
     background: #fff;
-    width: 80%;
+    width: 45%;
     max-width: 700px;
     margin: 100px auto 0;
     border-radius: 10px;
@@ -48,7 +48,7 @@ body{
     padding: 7px;
     margin: 10px 0;
     text-align: center;
-    border-radius: 7px;
+    /* border-radius: 7px; */
     cursor: pointer;
     transition: all 0.3s;
 }
