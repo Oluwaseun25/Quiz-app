@@ -48,7 +48,7 @@ body{
     padding: 7px;
     margin: 10px 0;
     text-align: center;
-    /* border-radius: 7px; */
+    border-radius: 7px;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -70,4 +70,12 @@ body{
     border-radius: 4px;
     cursor: pointer;
     display: none;
+}
+
+.correct{
+    background: darkolivegreen;
+}
+
+.incorrect{
+    background: crimson;
 }

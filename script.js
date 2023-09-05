@@ -86,8 +86,8 @@ let scores = 0;
 
 function startQuiz(){
     resetQuiz();
-    let currentQuestionIndex = 0;
-    let scores = 0;
+     currentQuestionIndex = 0;
+     scores = 0;
     nextButton.innerHTML = "next"
     showQuestion()
 }
@@ -103,10 +103,9 @@ function showQuestion(){
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerBtn.appendChild(button);
-        answer.correct? button.dataset.correct = answer.correct
-        button.addEventListener("click",(selectAnswer)=>{
-        
-        })
+        answer.correct ? (button.dataset.correct = answer.correct) : null;
+        button.addEventListener("click", selectAnswer);
+
     });
 }
 
@@ -119,7 +118,18 @@ function resetQuiz() {
 
 function selectAnswer(e) {
      selectedBtn = e.target 
-}
+     const isCorrect = selectedBtn.dataset.correct === "true"
+     isCorrect? selectedBtn.classList.add("correct") : selectedBtn.classList.add("incorrect");
+    Array.from(answerBtn.children).forEach(button =>{
+        if(button.dataset.correct === "true") {
+            button.classList.add("correct")
+        } 
+        button.disabled = "true"
+    });
+        nextButton.style.display = "block"
+    }
 
 
 startQuiz();
+
+// nb-56+%=
