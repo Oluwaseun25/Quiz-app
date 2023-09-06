@@ -53,10 +53,16 @@ body{
     transition: all 0.3s;
 }
 
-.btn:hover{
+.btn:hover:not([disabled]){
     background: cadetblue;
     color: #fff;
 }
+
+.btn:disabled{
+    cursor: no-drop;
+}
+
+
 
 #next-btn{
     background: #0b4f77;
