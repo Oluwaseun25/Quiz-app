@@ -119,7 +119,7 @@ function resetQuiz() {
 function selectAnswer(e) {
      selectedBtn = e.target 
      const isCorrect = selectedBtn.dataset.correct === "true"
-     isCorrect? selectedBtn.classList.add("correct") : selectedBtn.classList.add("incorrect");
+     isCorrect ? (selectedBtn.classList.add("correct"), scores++) : selectedBtn.classList.add("incorrect");
     Array.from(answerBtn.children).forEach(button =>{
         if(button.dataset.correct === "true") {
             button.classList.add("correct")
@@ -129,6 +129,8 @@ function selectAnswer(e) {
         nextButton.style.display = "block"
     }
 
+
+    nextButton
 
 startQuiz();
 
