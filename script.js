@@ -79,10 +79,13 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerBtn = document.getElementById("answer-button");
 const nextButton = document.querySelector("#next-btn");
+const countdownElement = document.getElementById('countdown');
 
 
 let currentQuestionIndex = 0;
 let scores = 0;
+let countdown = 10;
+let timerInterval;
 
 function startQuiz(){
     resetQuiz();
@@ -90,6 +93,7 @@ function startQuiz(){
      scores = 0;
     nextButton.innerHTML = "next"
     showQuestion()
+    startTimer();
 }
 
 function showQuestion(){
@@ -149,12 +153,43 @@ function selectAnswer(e) {
     }
 
     nextButton.addEventListener("click",()=>{
+        
         if(currentQuestionIndex < questions.length){
             handleNextButton();
+        }
+        if(currentQuestionIndex < questions.length){
+            startTimer();
         }
         else { startQuiz();
         }
     })
+
+   
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    countdown--;
+    countdownElement.textContent = countdown;
+
+    if (countdown <= 0) {
+      clearInterval(timerInterval);
+      Array.from(answerBtn.children).forEach(button =>{
+        if(button.dataset.correct === "true") {
+            button.classList.add("correct")
+        } 
+        button.disabled = "true"
+    });
+        nextButton.style.display = "block"
+    }
+  }, 1000); 
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    countdown = 10; 
+    countdownElement.textContent = countdown; 
+  }
+  
 
 startQuiz();
 
