@@ -12,7 +12,7 @@ body{
 
 .app{
     background: #fff;
-    width: 35%;
+    width: 40%;
     max-width: 700px;
     margin: 140px auto 40px;
     border-radius: 10px;
@@ -20,12 +20,24 @@ body{
 }
 
 .app h1{
-    font-size: 24px;
+    font-size: 22px;
     color: cadetblue;
     font-weight: 700;
     border-bottom: 1px solid black;
     width: 80%;
     padding-bottom: 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+#timer {
+    font-size: 18px; 
+}
+
+#timer, #countdown {
+    display: inline-block;
+    margin: 0; 
 }
 
 .quiz{
@@ -61,8 +73,6 @@ body{
 .btn:disabled{
     cursor: no-drop;
 }
-
-
 
 #next-btn{
     background: #0b4f77;
