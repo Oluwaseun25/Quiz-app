@@ -19,6 +19,10 @@ body{
     padding: 20px ;
 }
 
+.header{
+    background-color: lightgray;
+}
+
 .app h1{
     font-size: 22px;
     color: cadetblue;
@@ -47,6 +51,7 @@ body{
 
 .quiz{
     padding: 10px 0;
+    background-color: snow;
 }
 
 .quiz h2{
@@ -80,7 +85,7 @@ body{
 }
 
 .next-btn{
-    background: #0b4f77;
+    background: lightgray;
     color: #fff;
     font-weight: 400;
     width: 80px;
