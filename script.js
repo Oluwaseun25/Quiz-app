@@ -91,12 +91,13 @@ function startQuiz(){
     resetQuiz();
      currentQuestionIndex = 0;
      scores = 0;
+    resetTimer();
     nextButton.innerHTML = "next"
     showQuestion()
-    startTimer();
 }
 
 function showQuestion(){
+    startTimer();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
 
@@ -133,6 +134,7 @@ function selectAnswer(e) {
         } 
         button.disabled = "true"
     });
+        stopTimer();
         nextButton.style.display = "block"
     }
 
@@ -144,7 +146,9 @@ function selectAnswer(e) {
     }
 
     function handleNextButton(){
+        resetTimer();
         currentQuestionIndex++;
+        nextButton.style.display = "none"
         if(currentQuestionIndex < questions.length){
             showQuestion();
         }
@@ -157,9 +161,7 @@ function selectAnswer(e) {
         if(currentQuestionIndex < questions.length){
             handleNextButton();
         }
-        if(currentQuestionIndex < questions.length){
-            startTimer();
-        }
+    
         else { startQuiz();
         }
     })
@@ -189,7 +191,10 @@ function resetTimer() {
     countdown = 10; 
     countdownElement.textContent = countdown; 
   }
-  
+
+  function stopTimer() {
+    clearInterval(timerInterval);
+  }
 
 startQuiz();
 
