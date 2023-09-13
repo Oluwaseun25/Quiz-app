@@ -78,7 +78,7 @@ const questions = [
 
 const questionElement = document.getElementById("question");
 const answerBtn = document.getElementById("answer-button");
-const nextButton = document.querySelector("#next-btn");
+const nextButton = document.querySelector(".next-btn");
 const countdownElement = document.getElementById('countdown');
 
 
