@@ -16,18 +16,21 @@ body{
     max-width: 700px;
     margin: 140px auto 40px;
     border-radius: 10px;
-    padding: 20px ;
+     padding-bottom: 20px 
 }
 
 .header{
     background-color: lightgray;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
 }
 
 .app h1{
-    font-size: 22px;
+    font-size: 28px;
     color: cadetblue;
     font-weight: 700;
-    border-bottom: 1px solid black;
     /* width: 80%; */
     padding-bottom: 20px;
     display: flex; 
@@ -36,7 +39,8 @@ body{
 }
 
 #timer {
-    font-size: 18px; 
+    font-size: 14px; 
+    display: inline-block;
     background:darkseagreen;;
     color: #fff;
     padding: 7px;
@@ -44,13 +48,17 @@ body{
     
 }
 
-#timer, #countdown {
-    display: inline-block;
-    margin: 0; 
+
+
+.timer-container {
+    text-align: center;
+    padding: 10px 0;
 }
 
+
+
 .quiz{
-    padding: 10px 0;
+    padding: 10px 20px;
     background-color: snow;
 }
 
@@ -84,12 +92,12 @@ body{
     cursor: no-drop;
 }
 
-.next-btn{
+.app .next-btn{
     background: lightgray;
     color: #fff;
     font-weight: 400;
     width: 80px;
-    padding: 7px 0;
+    padding: 7px 20px;
     border: 0;
     margin: 20px auto 0;
     text-align: center;
